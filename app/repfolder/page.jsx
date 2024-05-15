@@ -3,13 +3,14 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client';
+import useSWR from 'swr';
+
 
 import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
-import Link from 'next/link';
 
-function Profile() {
+function RepFolder() {
   const { user, isLoading } = useUser();
 
   return (
@@ -33,11 +34,8 @@ function Profile() {
                 {user.email}
               </p>
               <p className="text-muted" data-testid="profile-adp">{user.adp}</p>
-              <a href={`/repfolder/ADP${user.adp}/racing.png`}>test</a>
+              <a href={`/repfolder/${user.adp}/racing.png`}>test</a>
               <p className="text-muted" data-testid="home-folder">{user.first} {user.last} ({user.adp})</p>
-              <Link key={user.adp} href='/repfolder/'>
-                <h3>{user.first} {user.last} ({user.adp})</h3>
-              </Link>
             </Col>
           </Row>
           <Row data-testid="profile-json">
@@ -49,7 +47,7 @@ function Profile() {
   );
 }
 
-export default withPageAuthRequired(Profile, {
+export default withPageAuthRequired(RepFolder, {
   onRedirecting: () => <Loading />,
   onError: error => <ErrorMessage>{error.message}</ErrorMessage>
 });
