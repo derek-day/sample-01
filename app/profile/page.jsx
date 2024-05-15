@@ -33,6 +33,7 @@ function Profile() {
               </p>
               <p className="text-muted" data-testid="profile-adp">{user.adp}</p>
               <a href={`/repfolder/${user.adp}/racing.png`}>test</a>
+              <p className="text-muted" data-testid="home-folder">{user.first} {user.last} ({user.adp})</p>
             </Col>
           </Row>
           <Row data-testid="profile-json">
