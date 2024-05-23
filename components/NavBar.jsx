@@ -28,30 +28,46 @@ const NavBar = () => {
     <div className="nav-container" data-testid="navbar">
       <Navbar color="light" light expand="md">
         <Container>
-          <NavbarBrand className="logo" />
+          {/* <NavbarBrand className="logo" /> */}
           <NavbarToggler onClick={toggle} data-testid="navbar-toggle" />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar data-testid="navbar-items">
               <NavItem>
                 <PageLink href="/" className="nav-link" testId="navbar-home">
-                  Home
+                  {/* Home */}
+                  <img src="/logo.png" width={80} />
                 </PageLink>
               </NavItem>
               {user && (
                 <>
                   <NavItem>
                     <PageLink href="/csr" className="nav-link" testId="navbar-csr">
-                      Client-side rendered page
+                      COMDUE
                     </PageLink>
                   </NavItem>
                   <NavItem>
                     <PageLink href="/ssr" className="nav-link" testId="navbar-ssr">
-                      Server-side rendered page
+                      Daily
                     </PageLink>
                   </NavItem>
                   <NavItem>
                     <PageLink href="/external" className="nav-link" testId="navbar-external">
-                      External API
+                      Rep Commissions Program
+                    </PageLink>
+                  </NavItem>
+                  <NavItem>
+                    <PageLink href="/external" className="nav-link" testId="navbar-external">
+                      Sample Bag
+                    </PageLink>
+                  </NavItem>
+                  <NavItem>
+                    <PageLink href="/external" className="nav-link" testId="navbar-external">
+                      Territory Listing
+                    </PageLink>
+                  </NavItem>
+                  <NavItem>
+                    <PageLink href="/external" className="nav-link" testId="navbar-external">
+                      YTD Critical Measures
                     </PageLink>
                   </NavItem>
                 </>
