@@ -41,33 +41,33 @@ const NavBar = () => {
               {user && (
                 <>
                   <NavItem>
-                    <PageLink href="/csr" className="nav-link" testId="navbar-csr">
-                      COMDUE
+                    <PageLink href="/comdue" className="nav-link" testId="navbar-comdue">
+                      Comdue
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/ssr" className="nav-link" testId="navbar-ssr">
+                    <PageLink href="/daily" className="nav-link" testId="navbar-daily">
                       Daily
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/external" className="nav-link" testId="navbar-external">
-                      Rep Commissions Program
+                    <PageLink href="/rcp" className="nav-link" testId="navbar-rcp">
+                      Commissions Program
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/external" className="nav-link" testId="navbar-external">
+                    <PageLink href="/sample" className="nav-link" testId="navbar-sample">
                       Sample Bag
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/external" className="nav-link" testId="navbar-external">
+                    <PageLink href="/territory" className="nav-link" testId="navbar-territory">
                       Territory Listing
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/external" className="nav-link" testId="navbar-external">
-                      YTD Critical Measures
+                    <PageLink href="/ytd" className="nav-link" testId="navbar-ytd">
+                      Year-to-Date
                     </PageLink>
                   </NavItem>
                 </>
