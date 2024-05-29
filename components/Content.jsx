@@ -6,10 +6,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import contentData from '../utils/contentData';
 
+const images = require.context('../public/repfolder/ADP2', false);
+const imageList = images.keys().map(image => images(image));
+
+console.log(imageList);
+
+
 
 const Content = () => (
 
+  
+
   <div className="next-steps my-5" data-testid="content">
+
+<div>
+{imageList.map((image, index) => (
+  <img key={index} src={image.default} alt={`image-${index}`} />
+))}
+</div>
+
+
     <h2 className="my-5 text-center" data-testid="content-title">
       What can I do next?
     </h2>
