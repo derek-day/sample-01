@@ -1,5 +1,5 @@
 import { Document, Page, pdfjs } from 'react-pdf';
-
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 function importAllImages(r) {
     let images = {};
@@ -11,6 +11,6 @@ function importAllImages(r) {
   
   export const images = importAllImages(
     // require.context('../public/repfolder/ADP2', false, /\.(png|jpe?g|svg)$/)
-    require.context('../public/repfolder/ADP1/COMDUE', false, /\.(pdf)$/)
+    require.context('../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
   );
   

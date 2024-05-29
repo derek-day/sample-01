@@ -8,7 +8,9 @@ import contentData from '../utils/contentData';
 
 import { images } from '../utils/imageLoader';
 
-import { Document, Page, pdfjs } from 'react-pdf';
+import { Document, Page, pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 
 const Content = () => (
 
@@ -17,9 +19,7 @@ const Content = () => (
 
     <div>
       {Object.keys(images).map((imageName, index) => (
-        // <img key={index} src={images[imageName].default} alt={imageName} />
-        // <img key={index} src={imageName} alt={imageName} />
-        <a href={imageName}>test</a>
+        <a key={index} href={'/repfolder/ADP1/COMDUE/' + imageName}>{imageName}</a>
       ))}
     </div>
 
