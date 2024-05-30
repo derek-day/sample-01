@@ -17,11 +17,22 @@ const Content = () => (
   <div className="next-steps my-5" data-testid="content">
 
 
-    <div>
+    {/* <div>
       {Object.keys(images).map((imageName, index) => (
         <a key={index} href={'/repfolder/ADP1/COMDUE/' + imageName}>{imageName}</a>
       ))}
-    </div>
+    </div> */}
+
+    <Row className="d-flex justify-content-between" data-testid="pdf-items">
+      {Object.keys(images).map((imageName, index) => (
+        <Col key={index} md={5} className="mb-4">
+          <h6 className="mb-3">
+            <a key={index} href={'/repfolder/ADP1/COMDUE/' + imageName}>{imageName}</a>
+          </h6>
+        </Col>
+      ))}
+    </Row>
+
 
 
     <h2 className="my-5 text-center" data-testid="content-title">
