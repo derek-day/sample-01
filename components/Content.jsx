@@ -8,8 +8,8 @@ import contentData from '../utils/contentData';
 
 import { images } from '../utils/imageLoader';
 
-import { Document, Page, pdfjs } from "react-pdf";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+// import { Document, Page, pdfjs } from "react-pdf";
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
 const Content = () => (
@@ -23,7 +23,7 @@ const Content = () => (
       ))}
     </div> */}
 
-    <Row className="d-flex justify-content-between" data-testid="pdf-items">
+    {/* <Row className="d-flex justify-content-between" data-testid="pdf-items">
       {Object.keys(images).map((imageName, index) => (
         <Col key={index} md={5} className="mb-4">
           <h6 className="mb-3">
@@ -31,7 +31,7 @@ const Content = () => (
           </h6>
         </Col>
       ))}
-    </Row>
+    </Row> */}
 
 
 
