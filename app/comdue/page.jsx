@@ -22,7 +22,29 @@ import imageLoader from '../../utils/imageLoader';
 function Comdue() {
   const { user, isLoading } = useUser();
 
-  function importAllImages(r) {
+  const [images, setResults] = useState([]);
+
+  useEffect(() => {
+    //Attempt to retreive data
+    try {
+      // const images = transformData();
+      const images = importAllImages(require.context(`../../public/repfolder/ADP${user.adp}/COMDUE`, false, /\.pdf$/));
+      // const images = importAllImages(require.context(`../../public/repfolder/ADP1/COMDUE`, false, /\.pdf$/));
+
+      if (images) {
+        // Add any data transformation
+        setResults(images)
+      }
+      else {
+        throw (error)
+      }
+    }
+    catch (error) {
+      //Handle error
+    }
+  }, [images])
+
+  const importAllImages = async (r) => {
     let images = {};
     r.keys().map((item, index) => {
       images[item.replace('./', '')] = r(item);
@@ -30,17 +52,30 @@ function Comdue() {
     return images;
   }
 
-  const adp = user.adp;
+  if (!images) {
+    // Return something until the data is loaded (usually a loader)
+    return null
+  }
 
-  console.log(adp);
+  console.log(images);
 
-  const images = importAllImages (
-    // require.context('../../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
-    // require.context(`../../public/repfolder/ADP${user.adp}/COMDUE`, false, /\.pdf$/)
-    require.context(`../../public/repfolder/ADP${adp}/COMDUE`, false, /\.pdf$/)
-    // require.context(`../../public/repfolder/`, true, /\.pdf$/)
-    // require.context(`../../public/repfolder/Comdue`, true, /\.pdf$/)
-  );
+
+
+
+  // function importAllImages(r) {
+  //   let images = {};
+  //   r.keys().map((item, index) => {
+  //     images[item.replace('./', '')] = r(item);
+  //   });
+  //   return images;
+  // }
+
+  // const adp = user.adp;
+
+  // const images = importAllImages (
+  //   // require.context('../../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
+  //   require.context(`../../public/repfolder/ADP${adp}/COMDUE`, false, /\.pdf$/, 'lazy')
+  // );
 
 
   // const [comdueList, setComdueList] = useState([]);
