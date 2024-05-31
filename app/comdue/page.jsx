@@ -14,17 +14,39 @@ import Highlight from '../../components/Highlight';
 function Comdue() {
   const { user, isLoading } = useUser();
 
-  function importComdue(r) {
-    let comdues = {};
-    r.keys().map((item, index) => {
-      comdues[item.replace('./', '')] = r(item);
-    });
-    return comdues;
-  }
+  // function importComdue(r) {
+  //   let comdues = {};
+  //   r.keys().map((item, index) => {
+  //     comdues[item.replace('./', '')] = r(item);
+  //   });
+  //   return comdues;
+  // }
   
-  const comdues = importComdue(
-    require.context(`../public/repfolder/${user.adp}/COMDUE`, false, /\.pdf$/)
-  );
+  // const comdues = importComdue(
+  //   require.context(`../public/repfolder/${user.adp}/COMDUE`, false, /\.pdf$/)
+  // );
+
+  const getComdue = async () => {
+    try {
+      function importComdue(r) {
+        let comdues = {};
+        r.keys().map((item, index) => {
+          comdues[item.replace('./', '')] = r(item);
+        });
+        return comdues;
+      }
+    
+      const comdues = importComdue(
+        require.context(`../public/repfolder/${user.adp}/COMDUE`, false, /\.pdf$/)
+      );
+      
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  getComdue();
+
   
   return (
     <>
