@@ -1,10 +1,3 @@
-// import { Document, Page, pdfjs } from 'react-pdf';
-// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
-import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client';
-
-
-
 function importAllImages(r) {
     let images = {};
     r.keys().map((item, index) => {
@@ -14,9 +7,7 @@ function importAllImages(r) {
   }
   
   export const images = importAllImages(
-    // require.context('../public/repfolder/ADP2', false, /\.(png|jpe?g|svg)$/)
     require.context('../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
     // require.context(`../public/repfolder/${user.adp}/COMDUE`, false, /\.pdf$/)
-
   );
   
