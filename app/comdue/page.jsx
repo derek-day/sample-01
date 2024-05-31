@@ -10,23 +10,22 @@ import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
 
-function importComdue(r) {
-  let comdues = {};
-  r.keys().map((item, index) => {
-    comdues[item.replace('./', '')] = r(item);
-  });
-  return comdues;
-}
-
-export const comdues = importComdue(
-  // require.context('../public/repfolder/ADP2', false, /\.(png|jpe?g|svg)$/)
-  // require.context('../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
-  require.context(`../public/repfolder/${user.adp}/COMDUE`, false, /\.pdf$/)
-);
 
 function Comdue() {
   const { user, isLoading } = useUser();
 
+  function importComdue(r) {
+    let comdues = {};
+    r.keys().map((item, index) => {
+      comdues[item.replace('./', '')] = r(item);
+    });
+    return comdues;
+  }
+  
+  const comdues = importComdue(
+    require.context(`../public/repfolder/${user.adp}/COMDUE`, false, /\.pdf$/)
+  );
+  
   return (
     <>
       <h1>Comdue</h1>
