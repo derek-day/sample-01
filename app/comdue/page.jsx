@@ -5,12 +5,14 @@ import { Row, Col } from 'reactstrap';
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client';
 import useSWR from 'swr';
 
-
 import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
 
 // import { images } from '../../utils/imageLoader';
+
+import { images } from '../../utils/comdueList';
+
 
 function Comdue() {
   const { user, isLoading } = useUser();
@@ -29,6 +31,19 @@ function Comdue() {
     require.context('../../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
     // require.context(`../../public/repfolder/ADP${adp}/COMDUE`, false, /\.pdf$/, 'lazy')
   );
+
+
+
+  // listReactFiles(__dirname).then(files => console.log(files))
+  
+  // const path = require('path');
+  // const dirPath = path.resolve(__dirname, `../../public/repfolder/ADP${user.adp}/COMDUE`);
+
+  // const files = fs.readdirSync(path.join("../../public/repfolder/ADP1/COMDUE"));
+  // const files = fs.readdirSync(path.join(`../../public/repfolder/ADP${user.adp}/COMDUE`));  
+  // const files = fs.readdirSync(dirPath);
+
+
   
   return (
     <>

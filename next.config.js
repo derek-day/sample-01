@@ -3,32 +3,56 @@ module.exports = {
 };
 
 module.exports = {
-  webpack: (config, options) =>
-  {
-      config.module.rules.push({
-          test: /\.pdf$/i,
-          type: 'asset/source'
-      })
+  webpack: (config, { isServer }) => {
+    config.module.rules.push({
+      test: /\.pdf$/i,
+      type: 'asset/source'
+  })
+    if (!isServer) {
+      config.resolve = {
+        ...config.resolve,
+        fallback: {
+          net: false,
+          dns: false,
+          tls: false,
+          fs: false,
+          request: false,
+        },
+      };
+} else {
+    }
 
-      return config
+    return config;
   },
-}
+};
 
 
-// module.exports = (phase, { defaultConfig }) => {
-//   return {
-//     ...defaultConfig,
+// module.exports = {
+//   webpack: (config, options) =>
+//   {
+//       config.module.rules.push({
+//           test: /\.pdf$/i,
+//           type: 'asset/source'
+//       })
 
-//     webpack: (config) => {
+//       return config
+//   },
+// }
+
+// module.exports = {
+//   webpack: (config, { isServer }) => {
+//     if (!isServer) {
 //       config.resolve = {
 //         ...config.resolve,
 //         fallback: {
-//           "fs": false,
-//           "path": false,
-//           "os": false,
-//         }
-//       }
-//       return config
-//     },
-//   }
+//           net: false,
+//           dns: false,
+//           tls: false,
+//           fs: false,
+//           request: false,
+//         },
+//       };
+//     }
+//     return config;
+//   },
 // }

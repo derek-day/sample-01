@@ -2,9 +2,21 @@
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client';
+// import fs from 'fs';
+
+
+export async function getInitialProps() {
+  // const fileNames = fs.readdirSync(postsDirectory);
+  const files = fs.readdirSync(`../../public/repfolder/ADP${user.adp}/COMDUE`);
+  console.log(files);
+}
 
 
 const ComdueList = () => {
+
+  getInitialProps();
+
+  console.log(files);
 
   const { user, isLoading } = useUser();
   console.log(user);
