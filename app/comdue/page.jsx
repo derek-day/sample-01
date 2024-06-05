@@ -9,14 +9,10 @@ import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
 
-// import { images } from '../../utils/imageLoader';
-
-// import { images } from '../../utils/comdueList';
-
-
 function Comdue() {
   const { user, isLoading } = useUser();
 
+  //get all pdfs collected from the specified folder (cannot dynamically import files with adp variable, need to shorten list later)
   function importAllImages(r) {
     let images = {};
     r.keys().map((item, index) => {
@@ -25,51 +21,35 @@ function Comdue() {
     return images;
   }
 
-  const adp = user.adp;
-
   const images = importAllImages (
-    // require.context('../../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
-    // require.context(`../../public/repfolder/ADP${adp}/COMDUE`, false, /\.pdf$/, 'lazy')
-    require.context('../../public/repfolder/', true, /\.pdf$/, 'lazy')
+    require.context('../../public/repfolder/COMDUE/', true, /\.pdf$/, 'lazy')
   );
 
+  //after getting map of all pdfs inside of specified folder, create a new map that contains just the pdfs for the logged in rep
+  const adp = user.adp;
 
-  //after getting map of all pdfs inside of repfolder, create a new map that contains just the COMDUE pdfs for a specific rep
-  
-  const test = images;
-  console.log(test);
+  function getRepList(r) {
+    let list = {};
+    {Object.keys(r).map((imageName, index) => {
+      if(imageName.includes('ADP'+adp)){
+        list[imageName.replace('./', '')] = imageName;
+      }
+    })}
+    return list;
+  }
 
-
-
-
-
-
-
-
-  // listReactFiles(__dirname).then(files => console.log(files))
-  
-  // const path = require('path');
-  // const dirPath = path.resolve(__dirname, `../../public/repfolder/ADP${user.adp}/COMDUE`);
-
-  // const files = fs.readdirSync(path.join("../../public/repfolder/ADP1/COMDUE"));
-  // const files = fs.readdirSync(path.join(`../../public/repfolder/ADP${user.adp}/COMDUE`));  
-  // const files = fs.readdirSync(dirPath);
-
-
-
-
+  const list = getRepList(images);
 
   return (
     <>
       <h1>Comdue</h1>
 
       <Row className="d-flex justify-content-between" data-testid="pdf-items">
-      {Object.keys(images).map((imageName, index) => (
+      {/* {Object.keys(images).map((imageName, index) => ( */}
+      {Object.keys(list).map((imageName, index) => (
         <Col key={index} md={5} className="mb-4">
           <h6 className="mb-3">
-            {/* <a key={index} href={`/repfolder/ADP${user.adp}/COMDUE/` + imageName}>{imageName}</a> */}
-            <a key={index} href={'repfolder/'+imageName}>{imageName}</a>
-            {/* <a key={index} href={`/repfolder/Comdue/` + imageName}>{imageName}</a> */}
+            <a key={index} href={'repfolder/COMDUE/'+imageName}>{imageName}</a>
           </h6>
         </Col>
       ))}
