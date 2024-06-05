@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import React from 'react';
 
@@ -8,12 +8,16 @@ import PdfList from '../components/Pdflist';
 import Pdf from '../components/pdf';
 
 export default function Index() {
+
   return (
     <>
       {/* <Hero /> */}
       {/* <hr /> */}
       <Content />
-      <Pdf />
+      {/* <Pdf /> */}
+
+      {/* <ComdueTest /> */}
+      {/* <ComdueTest /> */}
       {/* <PdfList /> */}
     </>
   );

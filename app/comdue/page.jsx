@@ -11,7 +11,7 @@ import Highlight from '../../components/Highlight';
 
 // import { images } from '../../utils/imageLoader';
 
-import { images } from '../../utils/comdueList';
+// import { images } from '../../utils/comdueList';
 
 
 function Comdue() {
@@ -28,9 +28,21 @@ function Comdue() {
   const adp = user.adp;
 
   const images = importAllImages (
-    require.context('../../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
+    // require.context('../../public/repfolder/ADP1/COMDUE', false, /\.pdf$/)
     // require.context(`../../public/repfolder/ADP${adp}/COMDUE`, false, /\.pdf$/, 'lazy')
+    require.context('../../public/repfolder/', true, /\.pdf$/, 'lazy')
   );
+
+
+  //after getting map of all pdfs inside of repfolder, create a new map that contains just the COMDUE pdfs for a specific rep
+  
+  const test = images;
+  console.log(test);
+
+
+
+
+
 
 
 
@@ -44,7 +56,9 @@ function Comdue() {
   // const files = fs.readdirSync(dirPath);
 
 
-  
+
+
+
   return (
     <>
       <h1>Comdue</h1>
@@ -53,7 +67,8 @@ function Comdue() {
       {Object.keys(images).map((imageName, index) => (
         <Col key={index} md={5} className="mb-4">
           <h6 className="mb-3">
-            <a key={index} href={`/repfolder/ADP${user.adp}/COMDUE/` + imageName}>{imageName}</a>
+            {/* <a key={index} href={`/repfolder/ADP${user.adp}/COMDUE/` + imageName}>{imageName}</a> */}
+            <a key={index} href={'repfolder/'+imageName}>{imageName}</a>
             {/* <a key={index} href={`/repfolder/Comdue/` + imageName}>{imageName}</a> */}
           </h6>
         </Col>
