@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import contentData from '../utils/contentData';
 
-import { images } from '../utils/imageLoader';
+// import { images } from '../utils/imageLoader';
 
 // import { Document, Page, pdfjs } from "react-pdf";
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
