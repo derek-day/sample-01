@@ -44,17 +44,16 @@ function COMDUE() {
     <>
       <h1>COMDUE</h1>
 
-      <Row className="d-flex justify-content-between" data-testid="pdf-items">
-      {/* {Object.keys(images).map((imageName, index) => ( */}
-      {Object.keys(list).map((imageName, index) => (
-        <Col key={index} md={5} className="mb-4">
-          <h6 className="mb-3">
-            <a key={index} href={'repfolder/COMDUE/'+imageName}>{imageName}</a>
-          </h6>
-        </Col>
-      ))}
-    </Row>
-
+      <div className='mt-4 pl-2' data-testid="pdf-items">
+        {Object.keys(list).map((imageName, index) => (
+          <Col key={index} md={5} className="mb-4">
+            <h6 className="mb-3 pl-3">
+              <a key={index} href={'repfolder/COMDUE/'+imageName}>{imageName}</a>
+            </h6>
+            <hr />
+          </Col>
+        ))}
+      </div>
     </>
   );
 }
