@@ -35,22 +35,29 @@ const Content = () => (
 
 
 
-    <h2 className="my-5 text-center" data-testid="content-title">
-      What can I do next?
+    <h2 className="my-4 text-center" data-testid="content-title">
+      Rep Folders
     </h2>
-    <Row className="d-flex justify-content-between" data-testid="content-items">
-      {contentData.map((col, i) => (
-        <Col key={i} md={5} className="mb-4">
-          <h6 className="mb-3">
-            <a href={col.link}>
-              <FontAwesomeIcon icon="link" className="mr-2" />
-              {col.title}
-            </a>
-          </h6>
-          <p>{col.description}</p>
-        </Col>
-      ))}
-    </Row>
+    <div className='mt-5 text-center' data-testid="pdf-items" style={{textAlign:'center'}}>
+            <h4 className="my-4">
+              <a href="/comdue">Comdue</a>
+            </h4>
+            <h4 className="my-4">
+              <a href="/daily">Daily</a>
+            </h4>
+            <h4 className="my-4">
+              <a href="/rcp">Rep Commissions</a>
+            </h4>
+            <h4 className="my-4">
+              <a href="/sample">Sample Bag</a>
+            </h4>
+            <h4 className="my-4">
+              <a href="/territory">Territory Listings</a>
+            </h4>
+            <h4 className="my-4">
+              <a href="/ytd">YTD Critical</a>
+            </h4>
+      </div>
   </div>
 );
 

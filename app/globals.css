@@ -4,6 +4,15 @@ body {
   background: linear-gradient(#DDE3F0, #FAF1EE);
 }
 
+.navbar {
+  border-radius: 4rem;
+  margin: 1rem;
+}
+
+ul {
+  align-items: center;
+}
+
 code {
   white-space: pre-wrap; 
   word-break: break-all; 

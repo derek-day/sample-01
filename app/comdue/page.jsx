@@ -42,7 +42,7 @@ function COMDUE() {
 
   return (
     <>
-      <h1>COMDUE</h1>
+      <h1>Comdue</h1>
 
       <div className='mt-4 pl-2' data-testid="pdf-items">
         {Object.keys(list).map((imageName, index) => (

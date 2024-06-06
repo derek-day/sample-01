@@ -35,7 +35,7 @@ const NavBar = () => {
               <NavItem>
                 <PageLink href="/" className="nav-link" testId="navbar-home">
                   {/* Home */}
-                  <img src="/logo.png" width={80} />
+                  <img src="/logo.png" width={100} />
                 </PageLink>
               </NavItem>
               {user && (
