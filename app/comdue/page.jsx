@@ -9,7 +9,7 @@ import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
 
-function Comdue() {
+function COMDUE() {
   const { user, isLoading } = useUser();
 
   //get all pdfs collected from the specified folder (cannot dynamically import files with adp variable, need to shorten list later)
@@ -42,7 +42,7 @@ function Comdue() {
 
   return (
     <>
-      <h1>Comdue</h1>
+      <h1>COMDUE</h1>
 
       <Row className="d-flex justify-content-between" data-testid="pdf-items">
       {/* {Object.keys(images).map((imageName, index) => ( */}
@@ -59,7 +59,7 @@ function Comdue() {
   );
 }
 
-export default withPageAuthRequired(Comdue, {
+export default withPageAuthRequired(COMDUE, {
   onRedirecting: () => <Loading />,
   onError: error => <ErrorMessage>{error.message}</ErrorMessage>
 });

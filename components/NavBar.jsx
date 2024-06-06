@@ -52,7 +52,7 @@ const NavBar = () => {
                   </NavItem>
                   <NavItem>
                     <PageLink href="/rcp" className="nav-link" testId="navbar-rcp">
-                      Commissions Program
+                      Rep Commissions
                     </PageLink>
                   </NavItem>
                   <NavItem>
@@ -62,12 +62,12 @@ const NavBar = () => {
                   </NavItem>
                   <NavItem>
                     <PageLink href="/territory" className="nav-link" testId="navbar-territory">
-                      Territory Listing
+                      Territory Listings
                     </PageLink>
                   </NavItem>
                   <NavItem>
                     <PageLink href="/ytd" className="nav-link" testId="navbar-ytd">
-                      Year-to-Date
+                      YTD Critical
                     </PageLink>
                   </NavItem>
                 </>
