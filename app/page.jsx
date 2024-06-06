@@ -5,18 +5,10 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Content from '../components/Content';
 
-export default function Index() {
-
+export default async function Index() {
   return (
     <>
-      {/* <Hero /> */}
-      {/* <hr /> */}
       <Content />
-      {/* <Pdf /> */}
-
-      {/* <ComdueTest /> */}
-      {/* <ComdueTest /> */}
-      {/* <PdfList /> */}
     </>
   );
 }
