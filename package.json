@@ -33,6 +33,7 @@
     "list-react-files": "^0.2.0",
     "morgan": "^1.10.0",
     "next": "^13.5.1",
+    "next-auth": "^4.24.7",
     "nodemon": "^3.0.0",
     "openssl": "^2.0.0",
     "react": "^18.2.0",
