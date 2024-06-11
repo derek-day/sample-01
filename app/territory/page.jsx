@@ -39,10 +39,11 @@ function TerritoryListings() {
   }
 
   const list = getRepList(images);
+  var count = Object.keys(list).length; 
 
   return (
     <>
-      <h1>Territory Listings</h1>
+      <h1>Territory Listings ({count})</h1>
 
       <div className='my-5 pl-2' data-testid="pdf-items">
         {Object.keys(list).map((imageName, index) => (

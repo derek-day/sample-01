@@ -39,10 +39,11 @@ function RepCommissions() {
   }
 
   const list = getRepList(images);
+  var count = Object.keys(list).length; 
 
   return (
     <>
-      <h1>Rep Commissions</h1>
+      <h1>Rep Commissions ({count})</h1>
 
       <div className='my-5 pl-2' data-testid="pdf-items">
         {Object.keys(list).map((imageName, index) => (
