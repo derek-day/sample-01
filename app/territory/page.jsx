@@ -44,7 +44,7 @@ function TerritoryListings() {
     <>
       <h1>Territory Listings</h1>
 
-      <div className='mt-4 pl-2' data-testid="pdf-items">
+      <div className='my-5 pl-2' data-testid="pdf-items">
         {Object.keys(list).map((imageName, index) => (
           <Col key={index} md={5} className="mb-4">
             <h6 className="mb-3 pl-3">

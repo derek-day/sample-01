@@ -14,15 +14,23 @@ const Content = () => {
 
   <div className="next-steps my-5" data-testid="content">
 
+{user && (
+    <>
+      <h4 className="my-5 text-center" data-testid="content-title">
+        Welcome, {user.first}
+      </h4>
+</>
+)}
+
     <h2 className="my-4 text-center" data-testid="content-title">
       Rep Folders
     </h2>
     
     {user && (
     <>
-      <h4 className="my-4 text-center" data-testid="content-title">
+      {/* <h4 className="my-4 text-center" data-testid="content-title">
         Welcome, {user.first}
-      </h4>
+      </h4> */}
 
       <div className='mt-5 text-center' data-testid="pdf-items" style={{textAlign:'center'}}>
         <h4 className="my-4">
