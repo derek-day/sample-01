@@ -86,34 +86,45 @@ const NavBar = () => {
                 </NavItem>
               )}
               {user && (
-                <UncontrolledDropdown nav inNavbar data-testid="navbar-menu-desktop">
-                  <DropdownToggle nav caret id="profileDropDown">
-                    <img
-                      src={user.picture}
-                      alt="Profile"
-                      className="nav-user-profile rounded-circle"
-                      width="50"
-                      height="50"
-                      decode="async"
-                      data-testid="navbar-picture-desktop"
-                    />
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header data-testid="navbar-user-desktop">
-                      {user.name}
-                    </DropdownItem>
-                    <DropdownItem className="dropdown-profile" tag="span">
-                      <PageLink href="/profile" icon="user" testId="navbar-profile-desktop">
-                        Profile
-                      </PageLink>
-                    </DropdownItem>
-                    <DropdownItem id="qsLogoutBtn">
-                      <AnchorLink href="/api/auth/logout" icon="power-off" testId="navbar-logout-desktop">
-                        Log out
-                      </AnchorLink>
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+
+                <NavItem id="qsLogoutBtn">
+                <AnchorLink
+                  href="/api/auth/logout"
+                  className= "btn btn-primary btn-margin mt-2"
+                  icon="power-off"
+                  testId="navbar-logout-mobile">
+                  Log Out
+                </AnchorLink>
+                </NavItem>
+
+                // <UncontrolledDropdown nav inNavbar data-testid="navbar-menu-desktop">
+                //   <DropdownToggle nav caret id="profileDropDown">
+                //     <img
+                //       src={user.picture}
+                //       alt="Profile"
+                //       className="nav-user-profile rounded-circle"
+                //       width="50"
+                //       height="50"
+                //       decode="async"
+                //       data-testid="navbar-picture-desktop"
+                //     />
+                //   </DropdownToggle>
+                //   <DropdownMenu>
+                //     <DropdownItem header data-testid="navbar-user-desktop">
+                //       {user.name}
+                //     </DropdownItem>
+                //     <DropdownItem className="dropdown-profile" tag="span">
+                //       <PageLink href="/profile" icon="user" testId="navbar-profile-desktop">
+                //         Profile
+                //       </PageLink>
+                //     </DropdownItem>
+                //     <DropdownItem id="qsLogoutBtn">
+                //       <AnchorLink href="/api/auth/logout" icon="power-off" testId="navbar-logout-desktop">
+                //         Log out
+                //       </AnchorLink>
+                //     </DropdownItem>
+                //   </DropdownMenu>
+                // </UncontrolledDropdown>
               )}
             </Nav>
             {!isLoading && !user && (

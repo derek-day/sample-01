@@ -20,6 +20,10 @@ const Content = () => {
     
     {user && (
     <>
+      <h4 className="my-4 text-center" data-testid="content-title">
+        Welcome, {user.first}
+      </h4>
+
       <div className='mt-5 text-center' data-testid="pdf-items" style={{textAlign:'center'}}>
         <h4 className="my-4">
           <a href="/comdue">Comdue</a>

@@ -47,3 +47,7 @@ p code {
 .result-block-container .result-block {
   opacity: 1;
 }
+
+.btn {
+  border-radius: 5rem !important;
+}
